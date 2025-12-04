@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        header {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        header .title {
+            font-size: 1.25rem;
+            color: #d1d5db;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #e5e7eb;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-item:hover {
+            color: var(--primary-color);
+        }
+
+        .main-content {
+            padding: 2.5rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+       /* Section Styling */
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: #4b5563;
+        }
+
+        ul {
+            list-style-position: inside;
+            color: #4b5563;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Experience Item */
+        .experience-item {
+            margin-bottom: 2rem;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #eff6ff;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Sidebar Styling */
+        .sidebar-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .sidebar-section h2 {
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 1.5rem;
+            }
+
+            header {
+                padding: 2rem 1rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+                border-radius: 0;
+            }
+
+            header {
+                background: white;
+                color: black;
+                border-bottom: 2px solid #eee;
+                padding: 1rem 0 2rem 0;
+            }
+
+            header .title, .contact-item {
+                color: #4b5563;
+            }
+            
+            h2 {
+                color: #000;
+                border-bottom: 2px solid #000;
+            }
+
+            .skill-tag {
+                background: white;
+                border: 1px solid #ddd;
+                color: black;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header / Contact Info -->
+        <header>
+            <h1>Alex J. Doe</h1>
+            <div class="title">Project Manager | Strategic Planner</div>
+            
+            <div class="contact-info">
+                <a href="mailto:alex.doe@example.com" class="contact-item">
+                    <i class="fas fa-envelope"></i> alex.doe@example.com
+                </a>
+                <a href="tel:+1234567890" class="contact-item">
+                    <i class="fas fa-phone"></i> (555) 123-4567
+                </a>
+                <a href="#" class="contact-item">
+                    <i class="fab fa-linkedin"></i> linkedin.com/in/alexdoe
+                </a>
+                <a href="#" class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i> New York, NY
+                </a>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Left Column (Primary Content) -->
+            <div class="left-column">
+                
+                <section>
+                    <h2><i class="fas fa-user-circle"></i> Profile</h2>
+                    <p>
+                        Results-oriented Project Manager with over 7 years of experience in leading cross-functional teams to deliver complex projects on time and within budget. Expert in Agile methodologies, risk management, and strategic planning. Proven track record of improving process efficiency by 30% and enhancing client satisfaction ratings.
+                    </p>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-briefcase"></i> Experience</h2>
+                    
+                    <div class="experience-item">
+                        <h3>Senior Project Manager</h3>
+                        <div class="subtitle">
+                            <span>Tech Solutions Inc.</span>
+                            <span>2020 - Present</span>
+                        </div>
+                        <ul>
+                            <li>Lead a team of 15 developers and designers in delivering enterprise-level software solutions for Fortune 500 clients.</li>
+                            <li>Implemented Agile/Scrum methodologies, reducing project delivery time by 20%.</li>
+                            <li>Manage project budgets exceeding $1M, ensuring 98% budget adherence through strict resource allocation.</li>
+                            <li>Facilitate communication between stakeholders and technical teams to ensure alignment on project goals.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3>Project Coordinator</h3>
+                        <div class="subtitle">
+                            <span>Creative Agency LLC</span>
+                            <span>2017 - 2020</span>
+                        </div>
+                        <ul>
+                            <li>Coordinated timeline and deliverables for 25+ simultaneous marketing campaigns.</li>
+                            <li>Assisted in the implementation of a new CRM system, improving data accuracy by 45%.</li>
+                            <li>Organized client meetings and prepared weekly status reports for upper management.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3>Business Analyst</h3>
+                        <div class="subtitle">
+                            <span>Global Corp</span>
+                            <span>2015 - 2017</span>
+                        </div>
+                        <ul>
+                            <li>Analyzed business requirements and translated them into technical specifications.</li>
+                            <li>Conducted market research to identify trends and opportunities for growth.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column (Sidebar) -->
+            <div class="right-column">
+                
+                <section class="sidebar-section">
+                    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div style="margin-bottom: 1rem;">
+                        <h3>MBA, Management</h3>
+                        <p class="subtitle">University of Business</p>
+                        <p style="font-size: 0.9rem; color: #6b7280;">Graduated: 2015</p>
+                    </div>
+                    <div>
+                        <h3>BS, Business Admin</h3>
+                        <p class="subtitle">State University</p>
+                        <p style="font-size: 0.9rem; color: #6b7280;">Graduated: 2013</p>
+                    </div>
+                </section>
+
+                <section class="sidebar-section">
+                    <h2><i class="fas fa-tools"></i> Skills</h2>
+                    <div class="skills-container">
+                        <span class="skill-tag">Project Management</span>
+                        <span class="skill-tag">Agile & Scrum</span>
+                        <span class="skill-tag">JIRA / Asana</span>
+                        <span class="skill-tag">Risk Analysis</span>
+                        <span class="skill-tag">Budgeting</span>
+                        <span class="skill-tag">Leadership</span>
+                        <span class="skill-tag">Strategic Planning</span>
+                        <span class="skill-tag">Communication</span>
+                    </div>
+                </section>
+
+                <section class="sidebar-section">
+                    <h2><i class="fas fa-award"></i> Certifications</h2>
+                    <ul style="list-style: none; margin-left: 0;">
+                        <li style="margin-bottom: 0.5rem;">
+                            <strong>PMP Certification</strong><br>
+                            <span style="font-size: 0.85rem; color: #6b7280;">Project Management Inst.</span>
+                        </li>
+                        <li>
+                            <strong>Certified Scrum Master</strong><br>
+                            <span style="font-size: 0.85rem; color: #6b7280;">Scrum Alliance</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="sidebar-section">
+                    <h2><i class="fas fa-language"></i> Languages</h2>
+                    <ul style="list-style: none; margin-left: 0;">
+                        <li style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                            <span>English</span>
+                            <span style="color: #6b7280;">Native</span>
+                        </li>
+                        <li style="display: flex; justify-content: space-between;">
+                            <span>Spanish</span>
+                            <span style="color: #6b7280;">Conversational</span>
+                        </li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+        
+        <!-- Footer for copyright or extra info -->
+        <footer style="text-align: center; padding: 2rem; color: #9ca3af; font-size: 0.8rem; border-top: 1px solid #e5e7eb;">
+            &copy; 2024 Alex Doe. All rights reserved. | Available for remote work.
+        </footer>
+    </div>
+
+</body>
+</html>
